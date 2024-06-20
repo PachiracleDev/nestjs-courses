@@ -1,0 +1,14 @@
+import { SetMetadata } from '@nestjs/common';
+
+export const INTERVAL_SCHEDULER_KEY = 'INTERVAL_SCHEDULER_KEY';
+
+export const Interval = (ms: number) => SetMetadata(INTERVAL_SCHEDULER_KEY, ms);
+
+//HOST
+
+export const INTERVAL_HOST_KEY = 'INTERVAL_HOST_KEY';
+
+export const IntervalHost: ClassDecorator = SetMetadata(
+  INTERVAL_HOST_KEY,
+  true,
+);
