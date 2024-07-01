@@ -27,15 +27,11 @@ export class IntervalScheduler implements OnApplicationBootstrap {
       const isIntervalHost =
         this.reflector.get(INTERVAL_HOST_KEY, instance.constructor) ?? false;
 
-      console.log(isIntervalHost, 'isIntervalHost');
-
       if (!isIntervalHost) {
         return;
       }
 
       const methodKeys = this.metadataScanner.getAllMethodNames(prototype);
-
-      console.log(methodKeys, 'methodKeys');
 
       methodKeys.forEach((methodKey: string) => {
         const interval = this.reflector.get(
@@ -47,11 +43,9 @@ export class IntervalScheduler implements OnApplicationBootstrap {
           return;
         }
 
-        console.log(interval, 'interval');
-
-        setInterval(() => {
-          instance[methodKey]();
-        }, interval);
+        // setInterval(() => {
+        //   instance[methodKey]();
+        // }, interval);
       });
     });
   }
