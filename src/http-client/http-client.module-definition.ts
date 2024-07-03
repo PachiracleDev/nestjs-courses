@@ -3,6 +3,8 @@ import { ConfigurableModuleBuilder } from '@nestjs/common';
 export const {
   ConfigurableModuleClass,
   MODULE_OPTIONS_TOKEN: HTTP_MODULE_OPTIONS,
+  ASYNC_OPTIONS_TYPE,
+  OPTIONS_TYPE,
 } = new ConfigurableModuleBuilder<{
   baseUrl: string;
 }>({
